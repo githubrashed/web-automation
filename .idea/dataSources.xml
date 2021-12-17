@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="UAT_8080_@104.199.211.13" uuid="05f48860-3f74-4dcf-80fa-c6ab6d100fbf">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://104.199.211.13:4560/sbicloud_bd</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Staging_sbicloud_bd_08132021@34.80.72.151" uuid="6116cdda-c5d1-45f0-b23d-f687d820a81e">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://34.80.72.151:4560/sbicloud_bd</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="7099@10.42.53.111" uuid="f06572f8-6e1e-4dd2-adbf-b12ca0300353">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://10.42.53.111:4560/sbicloud_bd_20211028</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="ERPDEV_sbicloud_bd_04112021@10.42.65.131" uuid="9bdf0afe-84f4-48fb-a318-027a5dcda51d">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://10.42.65.131:4550/sbicloud_bd_04112021</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="9099_sbicloud_bd_11112021@10.42.53.111" uuid="56dadda9-1eed-4c4a-a5f7-b652d0a54329">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://10.42.53.111:4560/sbicloud_bd_11112021</jdbc-url>
+    </data-source>
+  </component>
+</project>

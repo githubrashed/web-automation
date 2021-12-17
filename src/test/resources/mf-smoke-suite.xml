@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Micro Finance Module Suite">
+    <test name="Micro Finance Area Test">
+        <classes>
+                        <class name="net.brac.web.fluentlenium.test.microfinance.member.MemberSetupTest"/>
+<!--                        <class name="net.brac.web.fluentlenium.test.microfinance.member.MemberListTest"/>-->
+                        <class name="net.brac.web.fluentlenium.test.microfinance.loan.LoanProposalSetupTest"/>
+                        <class name="net.brac.web.fluentlenium.test.microfinance.loan.ApproveLoanTest"/>
+
+        </classes>
+    </test>
+</suite>
