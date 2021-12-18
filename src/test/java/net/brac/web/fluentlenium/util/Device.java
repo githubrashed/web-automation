@@ -4,7 +4,6 @@ import java.awt.*;
 
 public enum Device {
     DESKTOP(1250, 350);
-
     private int width;
     private int height;
 

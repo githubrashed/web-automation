@@ -10,6 +10,7 @@ import java.util.Optional;
 public enum SupportedWebDriver {
 
     FIREFOX("firefox", false) {
+
         @Override
         public Capabilities getCapabilities(Device device) {
             DesiredCapabilities capabilities = DesiredCapabilities.firefox();

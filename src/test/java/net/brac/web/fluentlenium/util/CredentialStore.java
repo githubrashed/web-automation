@@ -42,5 +42,4 @@ public class CredentialStore {
     public void setPopulated(boolean populated) {
         this.populated = populated;
     }
-
 }

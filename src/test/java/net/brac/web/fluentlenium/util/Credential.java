@@ -29,5 +29,4 @@ public class Credential {
     public String getOfficeCode() {
         return officeCode;
     }
-
 }
