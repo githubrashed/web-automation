@@ -33,11 +33,9 @@ public abstract class BaseAuthenticatedTest extends BaseTest {
                 } else {
                     throw new IllegalStateException("expected to be at LoginPage or CommunityLoginPage, but actually not");
                 }
-//                return basePage.isAtPage() ? page : super.goTo(page);
             } else {
                 return page;
             }
-
         }
         return super.goTo(page);
     }
