@@ -12,14 +12,12 @@ public abstract class BaseMicroFinancePage<T extends BaseMicroFinancePage> exten
     protected abstract String projectSelector();
 
     public T selectProject(String value) {
-//        waitForBlockOverlayForWaitLoading();
         waitForBlockOverlay();
         GeneralUtil.waitForDomStable();
         await().atMost(TIME_OUT_DURATION, TimeUnit.SECONDS).untilPage().isLoaded();
         await().atMost(30, TimeUnit.SECONDS).until(el("select#" + projectSelector())).displayed();
         waitForBlockOverlay();
         el("select#" + projectSelector()).scrollToCenter().fillSelect().withValue(value);
-//        waitForBlockOverlayForWaitLoading();
         GeneralUtil.waitForDomStable();
         return (T) this;
     }
