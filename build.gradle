@@ -149,5 +149,6 @@ test {
                 'fluentlenium.remoteUrl': 'http://localhost:4444/wd/hub'
         ])
     }
+
 }
 
