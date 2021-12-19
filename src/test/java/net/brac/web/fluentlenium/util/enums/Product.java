@@ -19,5 +19,4 @@ public enum Product {
     public String getValue() {
         return value;
     }
-
 }

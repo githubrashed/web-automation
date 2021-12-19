@@ -21,27 +21,14 @@ public class LoginPage extends BasePage {
 
     public LoginPage fillAndSubmitForm(String username, String password) {
         FluentWebElement usernameEl = el("input#username_txt");
-//        isDisplayed(usernameEl);
         usernameEl.fill().with(username);
         FluentWebElement passwordEl = el("input#password");
-//        isDisplayed(usernameEl);
         passwordEl.fill().with(password);
         el("form[id='loginForm'] button[type='button']").scrollToCenter().waitAndClick();
         GeneralUtil.waitForDomStable();
         return this;
     }
 
-    //    public MyDashboardPage selectOffice(String officeCode) {
-//        if (hasOffice()) {
-//            selectValueFromFlexBoxByText("officeIdDiv", officeCode);
-//            waitAndClickElement(el("#search-form .button.mar_right5"));
-//            waitForBlockOverlay();
-//            await().atMost(10, TimeUnit.SECONDS).until(this::isNotAtPage);
-//            await().atMost(10, TimeUnit.SECONDS).untilPage().isLoaded();
-//            GeneralUtil.waitForDomStable();
-//        }
-//        return newInstance(MyDashboardPage.class);
-//    }
     public MyDashboardPage selectOffice(String officeCode) {
         if (hasOffice()) {
             FluentWebElement fluentWebElement = el("input[id^='officeIdDiv_input");
@@ -50,12 +37,10 @@ public class LoginPage extends BasePage {
             FluentList<FluentWebElement> fluentWebElements = find("div[id^='officeIdDiv_ctr'] div [id][class]");
             await().atMost(10, TimeUnit.SECONDS).until(fluentWebElements).size().greaterThanOrEqualTo(1);
             fluentWebElements.get(0).scrollToCenter().waitAndClick();
-//            waitForBlockOverlay();
             el("#search-form .button.mar_right5").scrollToCenter().waitAndClick();
             GeneralUtil.waitForDomStable();
         }
         return newInstance(MyDashboardPage.class);
-
     }
 
     public boolean hasOffice() {

@@ -15,5 +15,4 @@ public enum Status {
     public String getName() {
         return name;
     }
-
 }

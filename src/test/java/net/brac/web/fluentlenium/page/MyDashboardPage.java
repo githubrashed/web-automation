@@ -5,6 +5,7 @@ public class MyDashboardPage extends BasePage {
     public String getPageId() {
         return null;
     }
+
     @Override
     public String getUrl() {
         return "/myDashboard/myDashboard";

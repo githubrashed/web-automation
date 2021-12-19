@@ -107,7 +107,6 @@ public class MemberSetupPage extends BaseMicroFinancePage<MemberSetupPage> {
 
     public MemberSetupPage fillSpouseName(String spouseName) {
         FluentWebElement fluentWebElement = el("input#personalInfoDomainSpouseName");
-//        isDisplayed(fluentWebElement);
         fluentWebElement.scrollToCenter().scrollToCenter().fill().with(spouseName);
         return this;
     }
@@ -169,7 +168,6 @@ public class MemberSetupPage extends BaseMicroFinancePage<MemberSetupPage> {
     }
 
     public MemberSetupPage clickSameAsPresentAddress() {
-//        waitForBlockOverlay();
         el("#isSameAsPresentAddress").scrollToCenter().waitAndClick();
         await().untilPage().isLoaded();
         return this;
@@ -190,9 +188,6 @@ public class MemberSetupPage extends BaseMicroFinancePage<MemberSetupPage> {
     public MemberDetailPage clickSaveBtn() {
       waitForBlockOverlay();
         el("input#saveButtonId").scrollToCenter().waitAndClick();
-//      waitForSubmissionLoader();
-//      waitUntilMessage();
-//      await().atMost(10, TimeUnit.SECONDS).until(this::isNotAtPage);
         GeneralUtil.waitForDomStable();
         return newInstance(MemberDetailPage.class);
     }

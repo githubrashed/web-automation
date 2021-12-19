@@ -58,13 +58,8 @@ public abstract class BasePage extends FluentPage {
             iteration = iteration + 1;
             hasFluentWebElement = fluentWebElements.count() > 0;
         }
-
         return iteration;
     }
-
-//    public boolean hasFormError() {
-//        return find(CLASS_FORM_ERROR).count() > 0;
-//    }
 
     public boolean hasFormError() {
         return find(CLASS_FORM_ERROR).count() > 0;
@@ -82,6 +77,4 @@ public abstract class BasePage extends FluentPage {
     public void hasFancyBoxOverlay() {
         waitForLoading(find("div#fancybox-overlay"));
     }
-
-
 }

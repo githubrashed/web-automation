@@ -64,10 +64,6 @@ public abstract class BaseTest extends FluentTestNg {
         }
         return goTo(page);
     }
-//    public <P extends FluentPage> P goTo(Class<P> pageClass, String baseUrl) {
-//        return goTo(newInstance(pageClass), baseUrl);
-//    }
-
     private Device getTargetDevice() {
         return Device.DESKTOP;
     }

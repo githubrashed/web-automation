@@ -21,7 +21,6 @@ public class MemberSetupTest extends BaseAuthenticatedTest {
 
     @Test
     public void progotiMemberSetupShouldSucceed() {
-//        assertThat(memberSetupPage(projectProgoti).hasAlertSuccess()).isTrue();
         memberSetupPage(projectProgoti);
     }
 
