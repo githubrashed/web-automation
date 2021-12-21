@@ -58,9 +58,9 @@ public class MemberListPage extends BaseMicroFinancePage<MemberListPage> {
         return getMembers().index(0).scrollToCenter().as(MemberItem.class);
     }
 
-
     public MemberItem getMember(String ErpMemberNumber) {
         return getMembers().stream().map(memberItem -> memberItem.as(MemberItem.class))
                 .filter(memberItem -> memberItem.getErpMemberNumber().equalsIgnoreCase(ErpMemberNumber)).findAny().orElse(null);
     }
+
 }
