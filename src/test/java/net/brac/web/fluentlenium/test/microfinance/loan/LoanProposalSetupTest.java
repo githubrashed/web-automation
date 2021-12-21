@@ -32,5 +32,4 @@ public class LoanProposalSetupTest extends BaseAuthenticatedTest {
                 .fillInstallmentAmount(installmentAmount)
                 .clickSaveBtn();
     }
-
 }

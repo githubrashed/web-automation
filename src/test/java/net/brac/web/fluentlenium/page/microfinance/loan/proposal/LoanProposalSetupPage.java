@@ -121,5 +121,4 @@ public class LoanProposalSetupPage extends BaseMicroFinancePage<LoanProposalSetu
         return newInstance(ApproveLoanPage.class);
     }
 
-
 }
