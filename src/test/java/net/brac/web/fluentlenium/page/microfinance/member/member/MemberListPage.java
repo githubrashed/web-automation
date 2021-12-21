@@ -32,7 +32,6 @@ public class MemberListPage extends BaseMicroFinancePage<MemberListPage> {
 
     public MemberListPage fillErpMemberNumber(String erpMemberNumber) {
         FluentWebElement erpMemberNumberElement = el("erpMemberNumberElement");
-//        isDisplayed(erpMemberNumberElement);
         erpMemberNumberElement.scrollToCenter().fill().withText(erpMemberNumber);
         return this;
     }
@@ -53,7 +52,6 @@ public class MemberListPage extends BaseMicroFinancePage<MemberListPage> {
         return getMembers().index(0).scrollToCenter().as(MemberItem.class);
     }
 
-
     public MemberItem getMemberAt(int index) {
         await().atMost(TIME_OUT_DURATION, TimeUnit.SECONDS).untilPage().isLoaded();
         await().atMost(30, TimeUnit.SECONDS).until(getMembers().first()).displayed();
@@ -65,5 +63,4 @@ public class MemberListPage extends BaseMicroFinancePage<MemberListPage> {
         return getMembers().stream().map(memberItem -> memberItem.as(MemberItem.class))
                 .filter(memberItem -> memberItem.getErpMemberNumber().equalsIgnoreCase(ErpMemberNumber)).findAny().orElse(null);
     }
-
 }
