@@ -6,6 +6,8 @@ import net.brac.web.fluentlenium.util.GeneralUtil;
 import org.fluentlenium.core.domain.FluentList;
 import org.fluentlenium.core.domain.FluentWebElement;
 
+import java.util.concurrent.TimeUnit;
+
 public class LoanDisbursementPage extends BaseMicroFinancePage<LoanDisbursementPage> {
     @Override
     protected String projectSelector() {
@@ -29,6 +31,7 @@ public class LoanDisbursementPage extends BaseMicroFinancePage<LoanDisbursementP
     }
 
     public FluentList<FluentWebElement> getApprovedLoanList() {
+        waitForDataLoading();
         FluentList<FluentWebElement> fluentWebElementsLoan = find("table#loan-approved-grid tbody tr[id]");
         return fluentWebElementsLoan;
     }
@@ -38,10 +41,13 @@ public class LoanDisbursementPage extends BaseMicroFinancePage<LoanDisbursementP
     }
 
     public LoanDisbursementPage submitDisburse() {
-        el("input#disburseButtonId").scrollToCenter().waitAndClick();
+        FluentWebElement element = el("input#disburseButtonId");
+        await().atMost(TIME_OUT_DURATION, TimeUnit.SECONDS).untilPage().isLoaded();
+        await().atMost(30, TimeUnit.SECONDS).until(element).clickable();
+        element.scrollToCenter().waitAndClick();
         GeneralUtil.waitForDomStable();
         alert().accept();
+        waitForSubmissionLoader();
         return this;
     }
-
 }

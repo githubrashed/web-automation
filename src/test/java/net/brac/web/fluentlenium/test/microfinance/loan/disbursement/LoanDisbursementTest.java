@@ -17,7 +17,7 @@ public class LoanDisbursementTest extends BaseAuthenticatedTest {
     @Test
     public void loanDisbursementShouldSucceed() {
         LoanDisbursementPage loanDisbursementPage = goTo(LoanDisbursementPage.class);
-        loanDisbursementPage
+        loanDisbursementPage=loanDisbursementPage
                 .selectProject(Project.PROGOTI.getValue())
                 .clickSearchBtn()
                 .getFirstLoanItem()
