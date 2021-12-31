@@ -2,10 +2,13 @@
 <suite name="Micro Finance Module Suite">
     <test name="Micro Finance Area Test">
         <classes>
-                        <class name="net.brac.web.fluentlenium.test.microfinance.member.MemberSetupTest"/>
-<!--                        <class name="net.brac.web.fluentlenium.test.microfinance.member.MemberListTest"/>-->
-                        <class name="net.brac.web.fluentlenium.test.microfinance.loan.LoanProposalSetupTest"/>
-                        <class name="net.brac.web.fluentlenium.test.microfinance.loan.ApproveLoanTest"/>
+            <!--            <class name="net.brac.web.fluentlenium.test.microfinance.member.MemberSetupTest"/>-->
+            <!--            <class name="net.brac.web.fluentlenium.test.microfinance.member.MemberListTest"/>-->
+            <!--            <class name="net.brac.web.fluentlenium.test.microfinance.savings.compulsory.CompulsorySavingsTest"/>-->
+            <!--            <class name="net.brac.web.fluentlenium.test.microfinance.loan.LoanProposalSetupTest"/>-->
+            <!--            <class name="net.brac.web.fluentlenium.test.microfinance.loan.ApproveLoanTest"/>-->
+            <!--            <class name="net.brac.web.fluentlenium.test.microfinance.loan.disbursement.LoanDisbursementTest"/>-->
+            <class name="net.brac.web.fluentlenium.test.microfinance.loan.collection.MemberLoanCollectionProgotiTest"/>
 
         </classes>
     </test>

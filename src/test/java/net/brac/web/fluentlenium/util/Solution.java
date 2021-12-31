@@ -1,6 +1,22 @@
 package net.brac.web.fluentlenium.util;
 
-public class Solution {
+import net.brac.web.fluentlenium.page.microfinance.member.MemberSetupPage;
+import sun.rmi.runtime.NewThreadAction;
+
+public class Solution extends MemberSetupPage {
+
+    public static void main(String[] args)
+    {
+//        MemberSetupPage memberSetupPage = new MemberSetupPage();
+//        memberSetupPage=""
+//       String id= memberSetupPage.getId().replaceAll("[^0-9]+", "");
+        String s="  Hi How Are You 11  ";
+        String s1=s.replaceAll("[^0-9]+", "");
+        //*replacing all the value of string except digit by using "[^0-9]+" regex.*
+        System.out.println(s1);
+//        return s1;
+    }
+
 //   public static void main(String[] args) {
 //        getNationalId();
 //    }
