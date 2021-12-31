@@ -39,4 +39,18 @@ public abstract class BaseMicroFinancePage<T extends BaseMicroFinancePage> exten
         hasBlockPageImage();
         return (T) this;
     }
+
+    public T fillMemberNumber(String memberNumber) {
+        FluentWebElement fluentWebElementMembershipNumber = el("input#membershipNumber");
+        await().atMost(TIME_OUT_DURATION, TimeUnit.SECONDS).untilPage().isLoaded();
+        await().atMost(30, TimeUnit.SECONDS).until(fluentWebElementMembershipNumber).displayed();
+        fluentWebElementMembershipNumber.scrollToCenter().fill().with(memberNumber);
+        await().atMost(TIME_OUT_DURATION, TimeUnit.SECONDS).untilPage().isLoaded();
+        FluentWebElement fluentWebElementErpMemberNo = el("input#value");
+        fluentWebElementErpMemberNo.scrollToCenter().waitAndClick();
+        waitForBlockOverlay();
+        GeneralUtil.waitForDomStable();
+        return (T) this;
+    }
+
 }

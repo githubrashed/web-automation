@@ -74,7 +74,30 @@ public abstract class BasePage extends FluentPage {
     public void hasBlockPageImage() {
         waitForLoading(find("div.blockUI.blockPage img"));
     }
+
     public void hasFancyBoxOverlay() {
         waitForLoading(find("div#fancybox-overlay"));
     }
+
+    public void waitForSubmissionLoader() {
+        waitForLoading(find("div.blockPage img[src$='submission_loader.gif']"));
+    }
+    public void waitForDataLoading() {
+        boolean hasDataLoaded = find("div[id^='load_'][style*='none']").count() == 0;
+        int iteration = 0;
+        while (hasDataLoaded && iteration < 500) {
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            hasDataLoaded = find("div[id^='load_'][style*='none']").count() == 0;
+            iteration = iteration + 1;
+        }
+    }
+    public String getId(){
+        String id = el("div.success div.message").text().trim().replaceAll("[^0-9]+","");
+        return id;
+    }
+
 }
