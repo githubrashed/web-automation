@@ -1,18 +1,23 @@
 package net.brac.web.fluentlenium.test.microfinance.member;
 
 import com.thedeanda.lorem.LoremIpsum;
-import net.brac.web.fluentlenium.page.microfinance.member.member.MemberDetailPage;
-import net.brac.web.fluentlenium.page.microfinance.member.member.MemberSetupPage;
+import net.brac.web.fluentlenium.page.microfinance.member.MemberDetailPage;
+import net.brac.web.fluentlenium.page.microfinance.member.MemberListPage;
+import net.brac.web.fluentlenium.page.microfinance.member.MemberSetupPage;
 import net.brac.web.fluentlenium.test.BaseAuthenticatedTest;
 import net.brac.web.fluentlenium.util.Credential;
 import net.brac.web.fluentlenium.util.GeneralUtil;
 import net.brac.web.fluentlenium.util.enums.Project;
 import org.testng.annotations.Test;
+import static org.assertj.core.api.Assertions.assertThat;
+
 
 import java.util.Objects;
 
 public class MemberSetupTest extends BaseAuthenticatedTest {
     private Project projectProgoti = Project.PROGOTI;
+    public String erpMemberNo = "";
+    protected String memberNo = "";
 
     @Override
     protected Credential credential() {
@@ -24,7 +29,10 @@ public class MemberSetupTest extends BaseAuthenticatedTest {
         memberSetupPage(projectProgoti);
     }
 
-    private MemberDetailPage memberSetupPage(Project project) {
+    public void memberSetupPage(Project project) {
+        String firstName = LoremIpsum.getInstance().getTitle(2);
+        String fatherName = LoremIpsum.getInstance().getTitle(2);
+        String motherName = LoremIpsum.getInstance().getTitle(2);
         MemberDetailPage memberDetailPage;
         MemberSetupPage memberSetupPage = goTo(MemberSetupPage.class);
         if (Objects.equals(project, Project.PROGOTI)) {
@@ -32,9 +40,9 @@ public class MemberSetupTest extends BaseAuthenticatedTest {
                     .selectProject(project.getValue())
                     .selectCategory("1")
                     .selectSalutation(1)
-                    .fillFirstName(LoremIpsum.getInstance().getTitle(2))
-                    .fillMiddleName(LoremIpsum.getInstance().getTitle(1))
-                    .fillLastName(LoremIpsum.getInstance().getTitle(1))
+                    .fillFirstName(firstName)
+                    .fillMiddleName(fatherName)
+                    .fillLastName(motherName)
                     .fillNationalId(GeneralUtil.getNationalId())
                     .selectAssignedPo(1)
                     .selectGender(1)
@@ -53,9 +61,22 @@ public class MemberSetupTest extends BaseAuthenticatedTest {
                     .clickSameAsPresentAddress()
                     .selectSavingsProduct(1)
                     .fillNewTargetAmount();
-        }
-        return memberSetupPage
-                .clickSaveBtn();
-    }
+            memberDetailPage = memberSetupPage
+                    .clickSaveBtn();
+//            memberDetailPage=memberDetailPage;
+            assertThat(memberDetailPage.hasAlertSuccess()).isTrue();
+            erpMemberNo = memberDetailPage.getId();
+            System.out.println("ERP Member No:" + erpMemberNo);
+//            assertThat(memberDetailPage.hasText(memberDetailPage.getErpMemberId())).isTrue();
+            MemberListPage memberListPage = goTo(MemberListPage.class);
+            memberListPage = memberListPage
+                    .selectProject(Project.PROGOTI.getValue())
+                    .fillErpMemberNumber(erpMemberNo)
+                    .clickSaveBtn();
+            memberNo = memberListPage.getMemberAt(0).getMemberNumber();
+            System.out.println("ERP Member No:" + erpMemberNo);
+            System.out.println(" Member No:" + memberNo);
 
+        }
+    }
 }
