@@ -38,6 +38,7 @@ public class LoanProposalSetupPage extends BaseMicroFinancePage<LoanProposalSetu
         el("select#loanProductDetails").scrollToCenter().fillSelect().withIndex(index);
         return this;
     }
+
     public LoanProposalSetupPage selectFrequencyByValue(String value) {
         el("select#loanProductDetails").scrollToCenter().fillSelect().withValue(value);
         return this;
@@ -121,5 +122,19 @@ public class LoanProposalSetupPage extends BaseMicroFinancePage<LoanProposalSetu
         return newInstance(ApproveLoanPage.class);
     }
 
+    public LoanProposalSetupPage selectEarner() {
+        el("input#type[value='1']").scrollToCenter().waitAndClick();
+        return this;
+    }
 
+    public LoanProposalSetupPage selectMemberOwnIncome() {
+        el("input#membersOwnIncome[value='0']").scrollToCenter().waitAndClick();
+        return this;
+    }
+
+    public LoanProposalSetupPage selectLoanUser(int index) {
+        el("select#type[name='loanUserId']").scrollToCenter().fillSelect().withIndex(index);
+        return this;
+    }
 }
+

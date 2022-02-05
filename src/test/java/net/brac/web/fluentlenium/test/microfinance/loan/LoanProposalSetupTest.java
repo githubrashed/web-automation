@@ -24,12 +24,15 @@ public class LoanProposalSetupTest extends BaseAuthenticatedTest {
         loanProposalSetupPage
                 .selectProject(Project.PROGOTI.getValue())
                 .clickMemberNumber()
+                .selectEarner()
+                .selectMemberOwnIncome()
                 .selectProductByValue(productProgoti.getValue())
                 .selectFrequencyByValue("1310")
                 .selectSector(1)
                 .selectScheme(1)
                 .fillProposedAmount(proposedAmount)
                 .fillInstallmentAmount(installmentAmount)
+                .selectLoanUser(1)
                 .clickSaveBtn();
     }
 
