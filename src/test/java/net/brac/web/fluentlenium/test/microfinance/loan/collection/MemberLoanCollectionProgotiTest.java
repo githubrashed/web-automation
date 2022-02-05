@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class MemberLoanCollectionProgotiTest extends BaseAuthenticatedTest {
 
-    protected String memberNumber = "858";
+    protected String memberNumber = "36";
 
     @Override
     protected Credential credential() {
