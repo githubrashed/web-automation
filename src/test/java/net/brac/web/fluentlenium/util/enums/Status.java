@@ -4,6 +4,7 @@ public enum Status {
     PENDING("Pending"),
     APPROVED("Approved"),
     REJECTED("Rejected"),
+    ACTIVE("active"),
     DISBURSED("Disbursed");
 
     private String name;
