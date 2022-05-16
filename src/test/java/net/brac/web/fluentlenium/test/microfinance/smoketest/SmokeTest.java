@@ -1,9 +1,12 @@
 package net.brac.web.fluentlenium.test.microfinance.smoketest;
 
 import com.thedeanda.lorem.LoremIpsum;
-import net.brac.web.fluentlenium.page.microfinance.member.MemberDetailPage;
-import net.brac.web.fluentlenium.page.microfinance.member.MemberListPage;
-import net.brac.web.fluentlenium.page.microfinance.member.MemberSetupPage;
+//import net.brac.web.fluentlenium.page.microfinance.member.MemberDetailPage;
+//import net.brac.web.fluentlenium.page.microfinance.member.MemberListPage;
+//import net.brac.web.fluentlenium.page.microfinance.member.MemberSetupPage;
+import net.brac.web.fluentlenium.page.microfinance.member.member.MemberDetailPage;
+import net.brac.web.fluentlenium.page.microfinance.member.member.MemberListPage;
+import net.brac.web.fluentlenium.page.microfinance.member.member.MemberSetupPage;
 import net.brac.web.fluentlenium.test.BaseAuthenticatedTest;
 import net.brac.web.fluentlenium.util.Credential;
 import net.brac.web.fluentlenium.util.GeneralUtil;
@@ -23,22 +26,20 @@ public class SmokeTest extends BaseAuthenticatedTest {
 
     @Override
     protected Credential credential() {
-        return smokeSuiteCredential();
+        return erpCredential();
     }
 
    @Test
    public void progotiMemberSetupShouldSucceed(){
         memberSetup(projectProgoti);
-
    }
-
     public void memberSetup(Project project) {
         String firstName = LoremIpsum.getInstance().getTitle(1);
         String fatherName = LoremIpsum.getInstance().getTitle(2);
         String motherName = LoremIpsum.getInstance().getTitle(2);
         bKashWalleNo = GeneralUtil.getMobileNumber();
         String nationalId = GeneralUtil.getNationalId();
-        String tim = GeneralUtil.getTinNumber();
+//        String tim = GeneralUtil.getTinNumber();
 
         MemberDetailPage memberDetailPage;
         MemberSetupPage memberSetupPage = goTo(MemberSetupPage.class);
@@ -87,4 +88,5 @@ public class SmokeTest extends BaseAuthenticatedTest {
             assertThat(memberListPage.getFirstMember().getStatus()).isEqualTo(Status.ACTIVE.getName());
         }
     }
+
 }
